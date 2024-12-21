@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
 
-const Login = () => {
-    const handleLogin = event => {
-        event.preventDefault();
+
+const SignUp = () => {
+    const handleSignUp=event => {
+        event.preventDefault()
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
@@ -12,9 +13,15 @@ const Login = () => {
                     <img src={img} alt="" />
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <h1 className="text-3xl text-center font-bold">Login now!</h1>
-                    <form  onSubmit={handleLogin}>
+                    <h1 className="text-3xl text-center font-bold">SignUp now!</h1>
+                    <form onSubmit={handleSignUp}>
                         <form className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -23,7 +30,7 @@ const Login = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text"> Confirm Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
@@ -32,15 +39,15 @@ const Login = () => {
                             </div>
                         </form>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="login" />
+                            <input className="btn btn-primary" type="submit" value="SignUp" />
 
                         </div>
                     </form>
-                    <p className='mt-4 text-center'>New to car doctor <Link className='text-orange-600'>Sin Up</Link></p>
+                    <p className='mt-4 text-center'>Already Have an Account<Link className='text-orange-600 ' to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;
