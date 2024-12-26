@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
-import SignUp from './../SignUp/SignUp';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 
@@ -29,8 +28,8 @@ const Login = () => {
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h1 className="text-3xl text-center font-bold">Login now!</h1>
-                    <form onSubmit={handleLogin}>
-                        <form className="card-body">
+                   
+                        <form onClick={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -51,7 +50,7 @@ const Login = () => {
                             <input className="btn btn-primary" type="submit" value="login" />
 
                         </div>
-                    </form>
+                  
                     <p className='mt-4 text-center'>New to car doctor <Link className='text-orange-600'>Sin Up</Link></p>
                 </div>
             </div>
